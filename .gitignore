@@ -1,0 +1,8 @@
+# Arquivos de ambiente e segredos
+.env
+
+# Dependências que podem ser reinstaladas
+node_modules/
+
+# Pasta do banco de dados (para SQLite, etc.)
+/backend/db/

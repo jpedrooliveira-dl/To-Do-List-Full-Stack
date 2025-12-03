@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Mapeamento da Paleta */
+:root {
+    --bg-color: #16161a;
+    --card-bg: #16161a;
+    --headline: #fffffe;
+    --paragraph: #94a1b2;
+    --button-main: #7f5af0;
+    --button-text: #fffffe;
+    --stroke: #010101;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
+    --danger: #e53e3e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Gradiente sutil para dar profundidade */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, var(--bg-color) 100%);
+    color: var(--paragraph);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 3rem;
+    /* Animação de gradiente para um efeito "aurora" */
+    background: linear-gradient(90deg, var(--tertiary), var(--headline), var(--button-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: gradient-animation 5s ease-in-out infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h2 {
+    color: var(--headline);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#taskForm {
+    background: rgba(36, 38, 41, 0.25);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(114, 117, 126, 0.3);
+    backdrop-filter: blur(4px); /* Efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(4px);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 15px;
+    background-color: rgba(22, 22, 26, 0.8);
+    color: var(--headline);
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#taskInput::placeholder {
+    color: var(--secondary);
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: var(--button-main);
+}
+
+#taskForm button {
+    padding: 12px 25px;
+    background-color: var(--button-main);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+}
+
+#taskForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(127, 90, 240, 0.4);
+}
+
+#taskForm button:active {
+    transform: translateY(0);
+}
+
+hr {
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    border-top: 2px solid var(--secondary);
+    margin: 20px 0;
+    opacity: 0.3;
+}
+
+#taskList {
+    background: rgba(36, 38, 41, 0.25);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(114, 117, 126, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 100%;
+    max-width: 500px;
+    list-style: none;
+    min-height: 200px;
+}
+
+#taskList li {
+    padding: 12px 15px;
+    background: #242629;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--tertiary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#taskList li:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+#taskList li:last-child {
+    margin-bottom: 0;
+}
+
+#taskList li span {
+    flex: 1;
+    color: var(--headline);
+    font-size: 1.05rem;
+    margin-right: 15px;
+}
+
+#taskList li button {
+    padding: 8px 15px;
+    background: var(--secondary);
+    color: var(--button-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#taskList li button:hover {
+    background: var(--danger);
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    #taskForm, #taskList {
+        padding: 20px;
+    }
+
+    #taskForm {
+        flex-direction: column;
+    }
+
+    #taskForm button {
+        width: 100%;
+    }
+}
