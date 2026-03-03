@@ -50,7 +50,7 @@ Siga os passos abaixo para rodar o projeto localmente.
 
 1. **Clone o repositório:**
    ```bash
-   git clone <URL_DO_SEU_REPOSITORIO_GIT>
+   git clone [<URL_DO_SEU_REPOSITORIO_GIT>](https://github.com/jpedrooliveira-dl/To-Do-List-Full-Stack.git)
    cd projeto_full
    ```
 
